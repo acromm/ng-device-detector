@@ -413,6 +413,10 @@
                         return deviceInfo.device == item;
                     });
                 };
+                
+                deviceInfo.IsWebApp = function () {
+                    return $window.matchMedia('(display-mode: standalone)').matches || $window.navigator.standalone;  
+                };
 
                 return deviceInfo;
             }
